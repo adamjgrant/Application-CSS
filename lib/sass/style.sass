@@ -1,0 +1,18 @@
+$black: #222 
+
+*
+  box-sizing: border-box
+
+html
+  background: $black
+  color: white
+
+html, body
+  height: 100%
+  font-size: 16px
+
+@import _grid
+@import _sidebar
+
+body
+  +grid-row
