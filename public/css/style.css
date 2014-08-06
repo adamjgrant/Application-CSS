@@ -78,3 +78,6 @@ body {
   -moz-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap; }
+
+.test {
+  display: bloct; }

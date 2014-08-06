@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+  kss = require('gulp-kss'),
   sass = require('gulp-ruby-sass'),
   watch = require('gulp-watch'),
   connect = require('gulp-connect'),
@@ -16,7 +17,17 @@ var gulp = require('gulp'),
 gulp.task('default', ['build', 'watch', 'connect']);
 
 // Basic builder
-gulp.task('build', ['compile:jade', 'compile:coffee', 'compile:sass', 'copy']);
+gulp.task('build', ['compile:jade', 'compile:coffee', 'compile:sass', 'copy', 'kss']);
+
+// KSS
+gulp.task('kss', function() {
+  gulp.src(['lib/sass/**/*.sass'])
+    .pipe(kss({
+      overview: './lib/styleguide/index.md'
+    }))
+    .pipe(gulp.dest('./public/'));
+
+});
 
 // Static assets
 gulp.task('copy', function() {
