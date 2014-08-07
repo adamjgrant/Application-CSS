@@ -1,0 +1,45 @@
+$black: #222 
+$padding: 15px
+
+*
+  box-sizing: border-box
+
+html
+  background: $black
+  color: white
+
+html, body
+  height: 100%
+  font-size: 16px
+
+@import _grid
+@import _sidebar
+@import _header
+@import _mainpane
+
+body
+  +grid-row
+
+a, a[href]
+  text-decoration: none
+  color: white
+
+  &:hover
+    text-decoration: underline
+
+h1, h2, h3, h4, h5, p
+  margin:
+    top: 0
+
+// Test
+// 
+// Just a test style
+// 
+// Markup <div class="{$modifiers}"></div>
+// 
+// .test      - Just testing
+// 
+// Styleguide 0.0.1
+
+.test
+  display: bloct

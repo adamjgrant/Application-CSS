@@ -11,10 +11,11 @@ var gulp = require('gulp'),
   options = require('./env'),
   jade = require('gulp-jade'),
   insert = require('gulp-insert'),
+  concat = require('gulp-concat'),
   sourcemaps = require('gulp-sourcemaps');
 
 // Main entry point
-gulp.task('default', ['build', 'watch', 'connect']);
+gulp.task('default', ['build', 'concat', 'watch', 'connect']);
 
 // Basic builder
 gulp.task('build', ['compile:jade', 'compile:coffee', 'compile:sass', 'copy', 'kss']);
@@ -25,7 +26,7 @@ gulp.task('kss', function() {
     .pipe(kss({
       overview: './lib/styleguide/index.md'
     }))
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest('./public/styleguide/'));
 
 });
 
@@ -44,12 +45,19 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('./public'));
 })
 
+// Concatenators 
+gulp.task('concat', function() {
+  gulp.src(['./node_modules/normalize.css/normalize.css', './public/css/main.css'])
+    .pipe(concat('style.css'))
+    .pipe(gulp.dest('./public/css/'));
+});
+
 // Compilers
 gulp.task('compile:sass', function() {
   gulp.src(['./lib/sass/**/*.{sass, scss}'])
     .pipe(sass())
-    // .pipe(minifyCSS())
     .pipe(gulp.dest('./public/css'));
+
 });
 
 gulp.task('compile:coffee', function() {
@@ -117,7 +125,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch' , function() {
-  gulp.watch(['./lib/sass/**/*.{sass, scss}'], ["compile:sass"]);
+  gulp.watch(['./lib/sass/**/*.{sass, scss}'], ["compile:sass", "concat"]);
   gulp.watch(['./lib/jade/**/*.jade'], ["compile:jade"]);
   gulp.watch(['./lib/coffee/**/*.coffee'], ["compile:coffee"]);
 });
