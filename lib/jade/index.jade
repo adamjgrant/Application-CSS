@@ -3,27 +3,34 @@ extends layout
 block sidebar
   h1 Table of contents
   ul
-    li 
-      a(href="#stuff") Article 1
-    li 
-      a(href="#stuff") Article 2
+    li.edit
+      a(href="#")
+        | Dataset 1
+      input(type="text" value="Dataset 1" data-href="/a/b/c/file.json")
+      aside.tools
+        span#edit e
+        span#edit a
     li
-      input(type="text" value="Article 3")
-    li 
-      a(href="#stuff") Stuff
-    li 
-      a(href="#stuff") Stuff
-
-  h1 Table of contents
-  ul
-    li 
-      a(href="#stuff") Stuff
-    li 
-      a(href="#stuff") Stuff
-    li 
-      a(href="#stuff") Stuff
-    li 
-      a(href="#stuff") Stuff
+      a(href="#")
+        | Dataset 1
+      input(type="text" value="Dataset 1" data-href="/a/b/c/file.json")
+      aside.tools
+        span#edit e
+        span#edit a
+    li
+      a(href="#")
+        | Dataset 1
+      input(type="text" value="Dataset 1" data-href="/a/b/c/file.json")
+      aside.tools
+        span#edit e
+        span#edit a
+    li
+      a(href="#")
+        | Dataset 1
+      input(type="text" value="Dataset 1" data-href="/a/b/c/file.json")
+      aside.tools
+        span#edit e
+        span#edit a
 
 block main
   h1 Documentation

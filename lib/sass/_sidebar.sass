@@ -1,11 +1,11 @@
 // Sidebar
-// 
+//
 // The main sidebar for application
-// 
+//
 // Markup <aside class="{$modifiers}"></aside>
-// 
+//
 // .acss-sidebar    - Just testing
-// 
+//
 // Styleguide 1.0.0
 
 .acss-sidebar
@@ -23,9 +23,14 @@
     margin: 10px 0
 
     li
+      position: relative
+
       a
         padding: 5px $padding
         display: block
+
+        + input
+          display: none
 
         &:hover
           background-color: rgba(255, 255, 255, 0.2)
@@ -45,6 +50,39 @@
           color: #333
           outline: 0px
 
+      .tools
+        display: none
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        padding: 5px 15px
+
+        span
+          cursor: pointer
+          display: inline-block
+          text-align: center
+          padding: 2px
+          width: 15px
+          border-radius: 50%
+
+          &:hover
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3), -1px 1px 1px rgba(255, 255, 255, 0.3), 1px -1px 1px rgba(255, 255, 255, 0.3), -1px -1px 1px rgba(255, 255, 255, 0.3)
+
+      &.edit
+        a, .tools
+          display: none
+
+        a + input
+          display: block
+
+      &:hover
+        .tools
+          display: block
+
+        &.edit
+          .tools
+            display: none
 
   h1
     font-size: 0.85rem
