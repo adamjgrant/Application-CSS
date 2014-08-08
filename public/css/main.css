@@ -99,9 +99,22 @@ html, body {
           text-align: center;
           padding: 2px;
           width: 15px;
-          border-radius: 50%; }
+          border-radius: 50%;
+          position: relative; }
+          .acss-sidebar ul li .tools span .tooltip {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            color: white;
+            text-shadow: none;
+            border-radius: 3px; }
           .acss-sidebar ul li .tools span:hover {
             text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3), -1px 1px 1px rgba(255, 255, 255, 0.3), 1px -1px 1px rgba(255, 255, 255, 0.3), -1px -1px 1px rgba(255, 255, 255, 0.3); }
+            .acss-sidebar ul li .tools span:hover .tooltip {
+              display: block; }
       .acss-sidebar ul li.edit a, .acss-sidebar ul li.edit .tools {
         display: none; }
       .acss-sidebar ul li.edit a + input {
