@@ -491,10 +491,6 @@ html, body {
     list-style: none;
     padding: 0;
     margin: 10px 0; }
-    .acss-sidebar ul li > a + article, .acss-sidebar ul li > input + article {
-      display: none; }
-    .acss-sidebar ul li > a:focus + article, .acss-sidebar ul li > input:focus + article {
-      display: block; }
     .acss-sidebar ul li a {
       padding: 5px 15px;
       display: block; }
@@ -512,14 +508,6 @@ html, body {
         background: white;
         color: #333333;
         outline: 0px; }
-    .acss-sidebar ul li article {
-      top: 40px;
-      left: 200px;
-      right: 0;
-      bottom: 0; }
-      @media screen and (min-width: 960px) {
-        .acss-sidebar ul li article {
-          position: absolute; } }
   .acss-sidebar h1 {
     font-size: 0.85rem;
     background-color: rgba(0, 0, 0, 0.2);

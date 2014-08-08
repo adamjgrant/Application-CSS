@@ -23,14 +23,6 @@
     margin: 10px 0
 
     li
-      > a, > input
-        + article
-          display: none
-
-        &:focus
-          + article
-            display: block
-
       a
         padding: 5px $padding
         display: block
@@ -53,14 +45,6 @@
           color: #333
           outline: 0px
 
-      article
-        top: 40px
-        left: 200px
-        right: 0
-        bottom: 0
-
-        @media screen and (min-width: $tablet-landscape)
-          position: absolute
 
   h1
     font-size: 0.85rem
