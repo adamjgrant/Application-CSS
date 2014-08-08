@@ -6,6 +6,8 @@
 
 ## Updating gem
 
+-1. `gulp`
+0. `cp public/css/app.css appcss/app/assets/stylesheets/appcss/`
 1. `cd` to `appcss/`
 2. `rvm gemset use appcss`
 3. Change version in lib/appcss/version.rb
