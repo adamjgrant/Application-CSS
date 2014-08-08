@@ -13,7 +13,6 @@
   background-color: rgba(255,255,255,0.1)
   +grid-column('third')
   font-size: 0.85rem
-  padding: $padding
 
   @media screen and (min-width: $tablet-landscape)
     width: 200px
@@ -21,10 +20,50 @@
   ul
     list-style: none
     padding: 0
+    margin: 10px 0
+
+    li
+      > a, > input
+        + article
+          display: none
+
+        &:focus
+          + article
+            display: block
+
+      a
+        padding: 5px $padding
+        display: block
+
+        &:hover
+          background-color: rgba(255, 255, 255, 0.2)
+          text-decoration: none
+
+      input[type="text"]
+        border: 0px
+        background: transparent
+        padding: 5px 15px
+        width: 100%
+
+        &:hover
+          background: rgba(255, 255, 255, 0.1)
+
+        &:focus
+          background: white
+          color: #333
+          outline: 0px
+
+      article
+        top: 40px
+        left: 200px
+        right: 0
+        bottom: 0
+
+        @media screen and (min-width: $tablet-landscape)
+          position: absolute
 
   h1
     font-size: 0.85rem
-    background-color: rgba(255, 255, 255, 0.1)
-    margin: -$padding
-      bottom: $padding
+    background-color: rgba(0, 0, 0, 0.2)
+    margin: 0
     padding: 5px $padding
