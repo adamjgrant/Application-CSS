@@ -459,7 +459,8 @@ html, body {
   width: 100%;
   display: block;
   margin-left: 0;
-  font-size: 0.85rem; }
+  font-size: 0.85rem;
+  z-index: 990; }
   @media screen and (min-width: 768px) {
     .acss-sidebar {
       width: calc(100% - 15px);
@@ -486,7 +487,12 @@ html, body {
 
   @media screen and (min-width: 960px) {
     .acss-sidebar {
-      width: 200px; } }
+      width: 200px;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      height: calc(100vh - 50px);
+      overflow: auto; } }
   .acss-sidebar ul {
     list-style: none;
     padding: 0;
@@ -530,12 +536,13 @@ html, body {
             display: none;
             position: absolute;
             top: 30px;
-            left: 10px;
-            background: rgba(0, 0, 0, 0.7);
+            right: 0px;
+            background: rgba(255, 255, 255, 0.7);
             padding: 5px;
-            color: white;
+            color: #222222;
             text-shadow: none;
-            border-radius: 3px; }
+            border-radius: 3px;
+            z-index: 999; }
           .acss-sidebar ul li .tools span:hover {
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3); }
             .acss-sidebar ul li .tools span:hover .tooltip {
@@ -611,7 +618,14 @@ html, body {
 
   @media screen and (min-width: 960px) {
     .acss-mainpane {
-      width: calc(100% - 200px); } }
+      width: calc(100% - 200px);
+      position: absolute;
+      z-index: 980;
+      left: 200px;
+      top: 50px;
+      height: calc(100vh - 50px);
+      right: 0;
+      overflow: auto; } }
 
 body {
   display: -webkit-box;
