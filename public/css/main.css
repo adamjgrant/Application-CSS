@@ -112,7 +112,7 @@ html, body {
             text-shadow: none;
             border-radius: 3px; }
           .acss-sidebar ul li .tools span:hover {
-            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3), -1px 1px 1px rgba(255, 255, 255, 0.3), 1px -1px 1px rgba(255, 255, 255, 0.3), -1px -1px 1px rgba(255, 255, 255, 0.3); }
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3); }
             .acss-sidebar ul li .tools span:hover .tooltip {
               display: block; }
       .acss-sidebar ul li.edit a, .acss-sidebar ul li.edit .tools {
