@@ -1,0 +1,260 @@
+/* normalize.css will be added here */
+* {
+  box-sizing: border-box; }
+
+html {
+  background: #222222;
+  color: white; }
+
+html, body {
+  height: 100%;
+  font-size: 16px; }
+
+.grid-row {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  align-items: stretch;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.acss-sidebar {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  display: block;
+  margin-left: 0;
+  font-size: 0.85rem;
+  z-index: 990; }
+  @media screen and (min-width: 768px) {
+    .acss-sidebar {
+      width: calc(100% - 15px);
+      clear: none; } }
+  @media screen and (min-width: 480px) {
+    .acss-sidebar {
+      width: 100%;
+      display: block;
+      margin-left: 0; } }
+  @media screen and (min-width: 480px) and (min-width: 768px) {
+    .acss-sidebar {
+      width: calc(50% - 15px);
+      clear: none; } }
+
+  @media screen and (min-width: 768px) {
+    .acss-sidebar {
+      width: 100%;
+      display: block;
+      margin-left: 0; } }
+  @media screen and (min-width: 768px) and (min-width: 768px) {
+    .acss-sidebar {
+      width: calc(33.33333% - 15px);
+      clear: none; } }
+
+  @media screen and (min-width: 960px) {
+    .acss-sidebar {
+      width: 200px;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      height: calc(100vh - 50px);
+      overflow: auto; } }
+  .acss-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .acss-sidebar ul li {
+      position: relative; }
+      .acss-sidebar ul li ul {
+        margin-left: 15px; }
+        .acss-sidebar ul li ul li a, .acss-sidebar ul li ul li input {
+          margin-left: -15px;
+          padding-left: 30px; }
+      .acss-sidebar ul li a {
+        padding: 5px 15px;
+        display: block; }
+        .acss-sidebar ul li a + input {
+          display: none; }
+        .acss-sidebar ul li a:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+          text-decoration: none; }
+      .acss-sidebar ul li input[type="text"] {
+        border: 0px;
+        background: transparent;
+        padding: 5px 15px;
+        width: 100%; }
+        .acss-sidebar ul li input[type="text"]:hover {
+          background: rgba(255, 255, 255, 0.1); }
+        .acss-sidebar ul li input[type="text"]:focus {
+          background: white;
+          color: #333333;
+          outline: 0px; }
+      .acss-sidebar ul li .tools {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 5px 15px; }
+        .acss-sidebar ul li .tools span {
+          cursor: pointer;
+          display: inline-block;
+          text-align: center;
+          width: 15px;
+          border-radius: 50%;
+          position: relative; }
+          .acss-sidebar ul li .tools span .tooltip {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 5px;
+            color: #222222;
+            text-shadow: none;
+            border-radius: 3px;
+            z-index: 999; }
+          .acss-sidebar ul li .tools span:hover {
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3); }
+            .acss-sidebar ul li .tools span:hover .tooltip {
+              display: block; }
+      .acss-sidebar ul li.edit a, .acss-sidebar ul li.edit .tools {
+        display: none; }
+      .acss-sidebar ul li.edit a + input {
+        display: block; }
+      .acss-sidebar ul li:hover .tools {
+        display: block; }
+      .acss-sidebar ul li:hover.edit .tools {
+        display: none; }
+  .acss-sidebar h1 {
+    font-size: 0.85rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 5px 15px; }
+
+.acss-mainpane {
+  width: 100%;
+  display: block;
+  margin-left: 0;
+  padding: 15px;
+  background: white;
+  color: #222222; }
+  @media screen and (min-width: 768px) {
+    .acss-mainpane {
+      width: calc(100% - 15px);
+      clear: none; } }
+  @media screen and (min-width: 480px) {
+    .acss-mainpane {
+      width: 100%;
+      display: block;
+      margin-left: 0; } }
+  @media screen and (min-width: 480px) and (min-width: 768px) {
+    .acss-mainpane {
+      width: calc(50% - 15px);
+      clear: none; } }
+
+  @media screen and (min-width: 768px) {
+    .acss-mainpane {
+      width: 100%;
+      display: block;
+      margin-left: 0; } }
+  @media screen and (min-width: 768px) and (min-width: 768px) {
+    .acss-mainpane {
+      width: calc(66.66667% - 15px);
+      clear: none; } }
+
+  @media screen and (min-width: 960px) {
+    .acss-mainpane {
+      width: calc(100% - 200px);
+      position: absolute;
+      z-index: 980;
+      left: 200px;
+      top: 50px;
+      height: calc(100vh - 50px);
+      right: 0;
+      overflow: auto; } }
+  .acss-mainpane section:target {
+    padding-top: 20px; }
+
+.acss-navbar {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: inline-flex;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -moz-align-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  padding: 0 10px; }
+  .acss-navbar p {
+    margin: 0; }
+  .acss-navbar ul {
+    margin: 15px 0;
+    padding: 0;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: inline-flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-content: space-between;
+    -moz-align-content: space-between;
+    align-content: space-between;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .acss-navbar ul li {
+      list-style: none;
+      margin: 0px 5px; }
+
+body {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  align-items: stretch;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+a, a[href] {
+  text-decoration: none;
+  color: white; }
+  a:hover, a[href]:hover {
+    text-decoration: underline; }
+
+h1, h2, h3, h4, h5, p {
+  margin-top: 0; }
+
+.test {
+  display: bloct; }

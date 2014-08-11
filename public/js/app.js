@@ -58,14 +58,13 @@ $.modal = {
   }
 };
 
-$('body')[0].addEventListener('click', function() {
-  if ($('.se-modal[style="display: block;"]').length) {
-    $('.se-modal[style="display: block;"]')[0].style.display = 'none';
+$('body').addEventListener('click', function() {
+  if ($$('.se-modal[style="display: block;"]').length) {
+    return $('.se-modal[style="display: block;"]').style.display = 'none';
   }
-  return console.info('clicked on body');
 });
 
-$('.se-modal')[0].addEventListener('click', function(e) {
+oneEvent($('.se-modal'), 'click', function(e) {
   return e.stopPropagation();
 });
 

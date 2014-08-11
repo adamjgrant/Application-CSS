@@ -436,21 +436,20 @@ html, body {
   font-size: 16px; }
 
 .grid-row {
+  display: -moz-box;
   display: -webkit-box;
-  display: -o-flex;
-  display: -moz-flex;
   display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -o-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -moz-justify-content: space-between;
   -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
   align-items: stretch;
-  -ms-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
   flex-wrap: wrap; }
 
 .acss-sidebar {
@@ -566,30 +565,6 @@ html, body {
     margin: 0;
     padding: 5px 15px; }
 
-.acss-header {
-  width: 100%;
-  display: block;
-  margin-left: 0; }
-  @media screen and (min-width: 768px) {
-    .acss-header {
-      width: calc(100% - 15px);
-      clear: none; } }
-  @media screen and (min-width: 768px) {
-    .acss-header {
-      width: 100%;
-      display: block;
-      margin-left: 0; } }
-  @media screen and (min-width: 768px) and (min-width: 768px) {
-    .acss-header {
-      width: calc(100% - 15px);
-      clear: none; } }
-
-  .acss-header ul {
-    list-style: none;
-    padding: 0 15px; }
-    .acss-header ul li {
-      display: inline-block; }
-
 .acss-mainpane {
   width: 100%;
   display: block;
@@ -634,22 +609,67 @@ html, body {
   .acss-mainpane section:target {
     padding-top: 20px; }
 
-body {
+.acss-navbar {
+  display: -moz-box;
   display: -webkit-box;
-  display: -o-flex;
-  display: -moz-flex;
   display: -webkit-flex;
+  display: -ms-flexbox;
+  display: inline-flex;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -moz-align-content: space-between;
+  align-content: space-between;
+  width: 100%;
+  padding: 0 10px; }
+  .acss-navbar p {
+    margin: 0; }
+  .acss-navbar ul {
+    margin: 15px 0;
+    padding: 0;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: inline-flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-content: space-between;
+    -moz-align-content: space-between;
+    align-content: space-between;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .acss-navbar ul li {
+      list-style: none;
+      margin: 0px 5px; }
+
+body {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -o-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -moz-justify-content: space-between;
   -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
   align-items: stretch;
-  -ms-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
   flex-wrap: wrap; }
 
 a, a[href] {

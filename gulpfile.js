@@ -47,12 +47,16 @@ gulp.task('copy', function() {
 
 // Compilers
 gulp.task('compile:sass', function() {
-  gulp.src(['./lib/sass/**/*.{sass, scss}'])
+  gulp.src(['./lib/sass/main.sass'])
     .pipe(sass())
     .pipe(fileInsert({
       "/* normalize.css will be added here */": "./node_modules/normalize.css/normalize.css"
     }))
     .pipe(rename('app.css'))
+    .pipe(gulp.dest('./public/css'));
+
+  gulp.src(['./lib/sass/docs.sass'])
+    .pipe(sass())
     .pipe(gulp.dest('./public/css'));
 
 });

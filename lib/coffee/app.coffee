@@ -45,12 +45,11 @@ $.modal =
     $('.se-modal')[0].style.display = 'none'
 
 # Close the single element modal if clicked outside.
-$('body')[0].addEventListener 'click', ->
-  $('.se-modal[style="display: block;"]')[0].style.display = 'none' if $('.se-modal[style="display: block;"]').length
-  console.info 'clicked on body' 
+$('body').addEventListener 'click', ->
+  $('.se-modal[style="display: block;"]').style.display = 'none' if $$('.se-modal[style="display: block;"]').length
 
 # Don't close the modal when clicking on it.  
-$('.se-modal')[0].addEventListener 'click', (e) -> e.stopPropagation()
+oneEvent $('.se-modal'), 'click', (e) -> e.stopPropagation()
 
 ###
 GROWLS

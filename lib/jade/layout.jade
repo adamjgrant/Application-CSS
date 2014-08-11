@@ -6,11 +6,16 @@ html
     block head
 
   body
-    header.acss-header
-      nav
-        ul
-          li
-            a(href="/") Application CSS
+    nav.acss-navbar
+      ul
+        li
+          a(href="/") Application CSS
+
+      ul
+        li
+          a(href="/test/") Test
+        li
+          a(href="/docs/") Docs
 
     aside.acss-sidebar
       block sidebar
@@ -19,3 +24,5 @@ html
       block main
 
     footer
+      script(src="/js/app.js")
+      block footer

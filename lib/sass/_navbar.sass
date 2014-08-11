@@ -1,0 +1,27 @@
+$navbarPadding:     15px
+$navbarItemPadding: 5px
+
+@mixin acss-navbar()
+  +flex(inline-flex)
+  +align-items(flex-start)
+  +flex-wrap
+  +justify-content(space-between)
+  +align-content(space-between)
+  width: 100%
+  padding: 0 ($navbarPadding - $navbarItemPadding)
+  p
+    margin: 0
+  ul
+    margin: $navbarPadding 0
+    padding: 0
+    +flex(inline-flex)
+    +justify-content(space-between)
+    +align-content(space-between)
+    +align-items(center)
+    +flex-wrap
+    li
+      list-style: none
+      margin: 0px $navbarItemPadding
+
+.acss-navbar
+  +acss-navbar

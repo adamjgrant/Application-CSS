@@ -2,15 +2,22 @@ extends ../layout
 
 block head
   style html { background-color: hsl(197, 46%, 38%); }
+  script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css")
 
 block sidebar
   h1 Interface Construction
   ul
     li
+      a(href="#css-grid") Grid
+    li
+      a(href="#css-responsive") Responsive CSS
+    li
+      a(href="#css-sass") Sass
+    li
       a(href="#css-sidebar") Sidebar
     li
       a(href="#css-themeing") Themeing
-  
+
   h1 Components
   ul
     li
@@ -28,7 +35,7 @@ block sidebar
     li
       a(href="#api-debouncer") Debouncer
     li
-      a(href="#api-dispatch-queue") Dispatch Queue 
+      a(href="#api-dispatch-queue") Dispatch Queue
     li
       a(href="#api-growls") Growls
     li
@@ -39,9 +46,17 @@ block main
 
   h2 Interface Construction
 
+  section#css-sass
+    :markdown
+      ### SASS
+      
+      All `.acss-x` classes (e.g. `.acss-sidebar`) are also available as Sass mixins under the same name. (e.g. `acss-sidebar()`)
+
+      These are exposed to allow more personalized, semantic usage of styles.
+
   section#css-themeing
     :markdown
-      #### Themeing
+      ### Themeing
 
       Changing most of the interface color is very easy. Because the sidebar elements are all white with varying translucency, most of the work
       can be done by simply changing the color of the `html` element.
@@ -78,7 +93,7 @@ block main
   section#api-dollar-single
     :markdown
       #### $
-      
+
       The single dollar returns just the first from the array of $$.
 
           <a href="#">One</a>
@@ -92,16 +107,108 @@ block main
   section#api-debouncer
     :markdown
       ### Debouncer
-      
+
       The purpose of a debouncer is to "throttle" a function call so it is only called once per x seconds.
       An example application is firing a `save()` event in realtime when users are editing the text in an input.
+
+          var save = function() { ... }
 
           $('input').addEventListener('keyup', function() {
             debounce(save, 'save');
           });
 
-      If we fired the save() event every time a user hit a key, we would inundate the server with database calls. 
+      If we fired the save() event every time a user hit a key, we would inundate the server with database calls.
       The debouncer will hold the function, firing it just once, only when the debouncer hasn't been hit for a full second.
+
+    .example-debouncer
+      h4 Example
+      p Type in the text box below
+      p 
+        input(type="text" placeholder="Name your project")
+      p
+        code.alert
+
+  section#api-dispatch-queue
+    :markdown
+      ### Dispatch queue
+
+      The queued dispatcher is a conveyor belt for functions to allow the possibility of undoing.
+      Functions move down the belt via a timer and are bumped ahead by other queued functions.
+      Within the time on the belt, the user can choose to remove (undo) a queued function.  
+
+    .example-dispatch-queue 
+      :markdown
+        Say you're writing an email function, but you want to give users 30 seconds to undo sending just in case.
+
+        What we'd need to do is not send the email at all, but put it on the dispatch queue to be sent after some time has passed.
+
+        We also think it's okay to send the email if the user goes on to write another one.
+
+            sendEmail = function() { ... }
+
+            $sendEmail.addEventListener 'click', function() {
+              dispatchQueue.add({
+                queue: sendEmail
+              });
+            }
+
+        We've told the dispatchQueue to add the `sendEmail()` function to the dispatchQueue. It will get its own default ID 
+        and the queue will revolve every 30 seconds by default.
+
+            sendEmail = function() { ... }
+
+            $sendEmail.addEventListener 'click', function() {
+              dispatchQueue.add({
+                queue: sendEmail,
+                growl: {
+                  title: 'Your email has been sent',
+                  text: 'Thank you.',
+                  undoText: 'Undo'
+                }
+              });
+            }
+
+        We also need to give users a way to undo (take the function out of the queue), so we pass in a growl. Notice the special parameter `undoText`
+        has been made available here. Via `dispatchQueue()` this allows us to customize the text that is linked to the undo action. The function will take care of
+        all the necessary binding.
+
+        But maybe we don't want to use growls as our means of undoing. `dispatchQueue()` allows for customization.
+
+            sendEmail = function() { ... }
+
+            $('#customBox').append('<div class="history-entry">Email sent. <button id="myCustomUndo">Undo</button>');
+
+            $sendEmail.addEventListener 'click', function() {
+              dispatchQueue.add({
+                queue: sendEmail,
+                removeWith: $('#myCustomUndo')
+              });
+            }
+
+        Now we've told the dispatchQueue to listen for a click on `#myCustomUndo` for removal. For further customization, you can also just call
+        `dispatchQueue.remove()` to remove an item from the queue by id. To do this, you must assign a custom ID to the queued function to be called later.
+
+            sendEmail = function() { ... }
+
+            $sendEmail.addEventListener 'click', function() {
+              dispatchQueue.add({
+                queue: sendEmail,
+                id: 'sendEmail'
+              });
+            }
+
+            $('#undo').click(function() {
+              dispatchQueue.remove('sendEmail');
+            })
+
+            $('#compose').click(function() {
+              dispatchQueue.dispatch('sendEmail');
+            })
+
+        Now, when the user clicks the `#undo` element, the `dispatchQueue` will know to remove the queued function with the id of `sendEmail`.
+
+        Because we think it's okay to send the email if the user starts a new message, we've attached `dispatchQueue.dispatch()` to the compose button as well.
+        `dispatch` will remove the function from the queue, but fires the function as well.
 
   section#api-modal
     :markdown
@@ -117,3 +224,13 @@ block main
       `$.modal.on(element, event)`
 
       Set an event listener on an element to launch the modal
+
+block footer
+  script(src="/js/docs.js")
+
+  script
+    :coffee
+      for el in $$('pre, code')
+        el.classList.add 'prettyprint'
+
+  link(rel="stylesheet" href="/css/docs.css")
