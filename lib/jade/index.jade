@@ -5,17 +5,8 @@ block sidebar
   ul
     li.edit
       a(href="#")
-        | Dataset 1
-      input(type="text" value="Dataset 1" data-href="/a/b/c/file.json")
-      aside.tools
-        span#edit e
-          .tooltip Edit
-        span#edit d
-          .tooltip Delete
-    li
-      a(href="#")
-        | Menu Item 1
-      input(type="text" value="Menu Item 1" data-href="/a/b/c/file.json")
+        | Editable entry
+      input(type="text" value="Editable entry" data-href="/a/b/c/file.json")
       aside.tools
         span#edit
           .tooltip Edit
@@ -25,18 +16,71 @@ block sidebar
           span.fa.fa-trash-o
     li
       a(href="#")
-        | Dataset 1
-      input(type="text" value="Dataset 1" data-href="/a/b/c/file.json")
+        | Basic text
+      input(type="text" value="Basic text" data-href="/a/b/c/file.json")
       aside.tools
-        span#edit e
-        span#edit a
+        span#edit
+          .tooltip Edit
+          span.fa.fa-pencil
+        span#edit
+          .tooltip Delete
+          span.fa.fa-trash-o
     li
       a(href="#")
-        | Dataset 1
+        | Submenu
+      input(type="text" value="Submenu" data-href="/a/b/c/file.json")
+      aside.tools
+        span#edit
+          .tooltip Edit
+          span.fa.fa-pencil
+        span#edit
+          .tooltip Delete
+          span.fa.fa-trash-o
+      ul
+        li
+          a(href="#")
+            | I'm a submenu
+          input(type="text" value="I'm a submenu" data-href="/a/b/c/file.json")
+          aside.tools
+            span#edit
+              .tooltip Edit
+              span.fa.fa-pencil
+            span#edit
+              .tooltip Delete
+              span.fa.fa-trash-o
+        li.edit
+          a(href="#")
+            | I'm an editable submenu
+          input(type="text" value="I'm an editable submenu" data-href="/a/b/c/file.json")
+          aside.tools
+            span#edit
+              .tooltip Edit
+              span.fa.fa-pencil
+            span#edit
+              .tooltip Delete
+              span.fa.fa-trash-o
+        li
+          a(href="#")
+            | I'm a submenu
+          input(type="text" value="I'm a submenu" data-href="/a/b/c/file.json")
+          aside.tools
+            span#edit
+              .tooltip Edit
+              span.fa.fa-pencil
+            span#edit
+              .tooltip Delete
+              span.fa.fa-trash-o
+    li
+      a(href="#")
+        | Regular link
       input(type="text" value="Dataset 1" data-href="/a/b/c/file.json")
       aside.tools
-        span#edit e
-        span#edit a
+        span#edit
+          .tooltip Edit
+          span.fa.fa-pencil
+        span#edit
+          .tooltip Delete
+          span.fa.fa-trash-o
 
   h1 Table of contents
   ul
