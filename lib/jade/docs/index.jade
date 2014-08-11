@@ -1,0 +1,119 @@
+extends ../layout
+
+block head
+  style html { background-color: hsl(197, 46%, 38%); }
+
+block sidebar
+  h1 Interface Construction
+  ul
+    li
+      a(href="#css-sidebar") Sidebar
+    li
+      a(href="#css-themeing") Themeing
+  
+  h1 Components
+  ul
+    li
+      a(href="#css-smart-table") Smart Table
+
+  h1 JavaScript API
+  ul
+    li
+      a(href="#api-dollar") $ Namespace
+      ul
+        li
+          a(href="#api-dollar-double") $$
+        li
+          a(href="#api-dollar-single") $
+    li
+      a(href="#api-debouncer") Debouncer
+    li
+      a(href="#api-dispatch-queue") Dispatch Queue 
+    li
+      a(href="#api-growls") Growls
+    li
+      a(href="#api-modal") Modal
+
+block main
+  h1 Documentation
+
+  h2 Interface Construction
+
+  section#css-themeing
+    :markdown
+      #### Themeing
+
+      Changing most of the interface color is very easy. Because the sidebar elements are all white with varying translucency, most of the work
+      can be done by simply changing the color of the `html` element.
+
+          html {
+            background-color: red;
+          }
+
+  h2 Components
+
+  h2 JavaScript API
+
+  section#api-dollar
+    :markdown
+      ### $ Namespace
+
+      In order to keep application.css dependency-free, jQuery is not included. For syntactical simplicity and familiarity, the $
+      namespace is still used.
+
+  section#api-dollar-double
+    :markdown
+      #### $$
+
+      The double dollar returns the full array of a selector, as you would expect with jQuery's `$`
+
+          <a href="#">One</a>
+          <a href="#">Two</a>
+          <a href="#">Three</a>
+
+          ...
+          console.log($$('a').length)
+          // = 3
+
+  section#api-dollar-single
+    :markdown
+      #### $
+      
+      The single dollar returns just the first from the array of $$.
+
+          <a href="#">One</a>
+          <a href="#">Two</a>
+          <a href="#">Three</a>
+
+          ...
+          console.log($('a').innerHTML);
+          // = 'One'
+
+  section#api-debouncer
+    :markdown
+      ### Debouncer
+      
+      The purpose of a debouncer is to "throttle" a function call so it is only called once per x seconds.
+      An example application is firing a `save()` event in realtime when users are editing the text in an input.
+
+          $('input').addEventListener('keyup', function() {
+            debounce(save, 'save');
+          });
+
+      If we fired the save() event every time a user hit a key, we would inundate the server with database calls. 
+      The debouncer will hold the function, firing it just once, only when the debouncer hasn't been hit for a full second.
+
+  section#api-modal
+    :markdown
+      ### Modal
+
+      The modal is one single element, `.se-modal` (SE stands for "Single Element"). By using a single element both for the backdrop and
+      the modal itself, the JavaScript can be kept very light.
+
+      `$.modal`
+
+      Main entry point for modal functions
+
+      `$.modal.on(element, event)`
+
+      Set an event listener on an element to launch the modal

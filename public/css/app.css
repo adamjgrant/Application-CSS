@@ -495,7 +495,8 @@ html, body {
       overflow: auto; } }
   .acss-sidebar ul {
     list-style: none;
-    padding: 0; }
+    padding: 0;
+    margin: 0; }
     .acss-sidebar ul li {
       position: relative; }
       .acss-sidebar ul li ul {
@@ -630,6 +631,8 @@ html, body {
       height: calc(100vh - 50px);
       right: 0;
       overflow: auto; } }
+  .acss-mainpane section:target {
+    padding-top: 20px; }
 
 body {
   display: -webkit-box;

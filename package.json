@@ -34,6 +34,7 @@
     "gulp-uglify": "^0.3.1",
     "gulp-watch": "^0.6.9",
     "kss": "^1.0.0",
+    "markdown-js": "0.0.3",
     "normalize.css": "^3.0.1"
   }
 }

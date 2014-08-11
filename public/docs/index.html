@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><link rel="stylesheet" href="/css/app.css"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"><style>html { background-color: hsl(197, 46%, 38%); }</style></head><body><header class="acss-header"><nav><ul><li><a href="/">Application CSS</a></li></ul></nav></header><aside class="acss-sidebar"><h1>Interface Construction</h1><ul><li><a href="#css-sidebar">Sidebar</a></li><li><a href="#css-themeing">Themeing</a></li></ul><h1>Components</h1><ul><li><a href="#css-smart-table">Smart Table</a></li></ul><h1>JavaScript API</h1><ul><li><a href="#api-dollar">$ Namespace</a><ul><li><a href="#api-dollar-double">$$</a></li><li><a href="#api-dollar-single">$</a></li></ul></li><li><a href="#api-debouncer">Debouncer</a></li><li><a href="#api-dispatch-queue">Dispatch Queue </a></li><li><a href="#api-growls">Growls</a></li><li><a href="#api-modal">Modal</a></li></ul></aside><main class="acss-mainpane"><h1>Documentation</h1><h2>Interface Construction</h2><section id="css-themeing"><h4>Themeing</h4>
+
+<p>Changing most of the interface color is very easy. Because the sidebar elements are all white with varying translucency, most of the work
+can be done by simply changing the color of the <code>html</code> element.</p>
+
+<pre><code>html {
+  background-color: red;
+}
+</code></pre></section><h2>Components</h2><h2>JavaScript API</h2><section id="api-dollar"><h3>$ Namespace</h3>
+
+<p>In order to keep application.css dependency-free, jQuery is not included. For syntactical simplicity and familiarity, the $
+namespace is still used.</p></section><section id="api-dollar-double"><h4>$$</h4>
+
+<p>The double dollar returns the full array of a selector, as you would expect with jQuery's <code>$</code></p>
+
+<pre><code>&lt;a href="#"&gt;One&lt;/a&gt;
+&lt;a href="#"&gt;Two&lt;/a&gt;
+&lt;a href="#"&gt;Three&lt;/a&gt;
+
+...
+console.log($$('a').length)
+// = 3
+</code></pre></section><section id="api-dollar-single"><h4>$</h4>
+
+<p>The single dollar returns just the first from the array of $$.</p>
+
+<pre><code>&lt;a href="#"&gt;One&lt;/a&gt;
+&lt;a href="#"&gt;Two&lt;/a&gt;
+&lt;a href="#"&gt;Three&lt;/a&gt;
+
+...
+console.log($('a').innerHTML);
+// = 'One'
+</code></pre></section><section id="api-debouncer"><h3>Debouncer</h3>
+
+<p>The purpose of a debouncer is to "throttle" a function call so it is only called once per x seconds.
+An example application is firing a <code>save()</code> event in realtime when users are editing the text in an input.</p>
+
+<pre><code>$('input').addEventListener('keyup', function() {
+  debounce(save, 'save');
+});
+</code></pre>
+
+<p>If we fired the save() event every time a user hit a key, we would inundate the server with database calls. 
+The debouncer will hold the function, firing it just once, only when the debouncer hasn't been hit for a full second.</p></section><section id="api-modal"><h3>Modal</h3>
+
+<p>The modal is one single element, <code>.se-modal</code> (SE stands for "Single Element"). By using a single element both for the backdrop and
+the modal itself, the JavaScript can be kept very light.</p>
+
+<p><code>$.modal</code></p>
+
+<p>Main entry point for modal functions</p>
+
+<p><code>$.modal.on(element, event)</code></p>
+
+<p>Set an event listener on an element to launch the modal</p></section></main><footer></footer></body></html>
