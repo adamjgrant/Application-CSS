@@ -26,10 +26,18 @@
   ul
     list-style: none
     padding: 0
-    margin: 10px 0
+    // margin: 10px 0
 
     li
       position: relative
+
+      ul
+        margin-left: 15px
+
+        li
+          a, input
+            margin-left: -15px
+            padding-left: ($padding + 15px)
 
       a
         padding: 5px $padding

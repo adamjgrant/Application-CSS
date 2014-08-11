@@ -495,10 +495,14 @@ html, body {
       overflow: auto; } }
   .acss-sidebar ul {
     list-style: none;
-    padding: 0;
-    margin: 10px 0; }
+    padding: 0; }
     .acss-sidebar ul li {
       position: relative; }
+      .acss-sidebar ul li ul {
+        margin-left: 15px; }
+        .acss-sidebar ul li ul li a, .acss-sidebar ul li ul li input {
+          margin-left: -15px;
+          padding-left: 30px; }
       .acss-sidebar ul li a {
         padding: 5px 15px;
         display: block; }
