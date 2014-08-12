@@ -3,26 +3,28 @@ var clickQuery = require('clickQuery');
 
 
 },{"clickQuery":3}],2:[function(require,module,exports){
-var debounce, debounceQueue, env, oneEvent, timer;
+var env, modal, oneEvent;
 
 env = 'dev';
 
 require('../../browserify.js');
 
-timer = false;
+window.A = new Object();
 
-debounceQueue = null;
+A.debounceTimer = false;
 
-debounce = function(fn, id) {
-  if (debounceQueue === null) {
-    debounceQueue = id;
+A.debounceQueue = null;
+
+A.debounce = function(fn, id) {
+  if (A.debounceQueue === null) {
+    A.debounceQueue = id;
   }
-  if (id === debounceQueue) {
-    clearTimeout(timer);
+  if (id === A.debounceQueue) {
+    clearTimeout(A.debounceTimer);
   }
-  return timer = setTimeout(function() {
+  return A.debounceTimer = setTimeout(function() {
     fn();
-    return debounceQueue = null;
+    return A.debounceQueue = null;
   }, 1000);
 };
 
@@ -40,7 +42,7 @@ oneEvent = function(selector, event, fn) {
 MODAL
  */
 
-$.modal = {
+modal = {
   on: function(el, event) {
     return oneEvent(el, event, function(e) {
       $('.se-modal')[0].style.display = 'block';
@@ -52,13 +54,13 @@ $.modal = {
   }
 };
 
-$('body').addEventListener('click', function() {
-  if ($$('.se-modal[style="display: block;"]').length) {
+$('body').click(function() {
+  if ($('.se-modal[style="display: block;"]').length) {
     return $('.se-modal[style="display: block;"]').style.display = 'none';
   }
 });
 
-oneEvent($('.se-modal'), 'click', function(e) {
+$('.se-modal').click(function(e) {
   return e.stopPropagation();
 });
 
