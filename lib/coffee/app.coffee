@@ -1,21 +1,17 @@
-###
-Utility functions
-###
+require('../../browserify.js')
 
-# A very rudimentary, lightweight alternative to jQuery
-$$ = (el) -> document.querySelectorAll el
-$ = (el) -> $$(el)[0]
+window.A = new Object()
 
 # The debouncer prevents a rapidly-called function from being called 
 # more than once per second.
-timer = false
-debounceQueue = null 
-debounce = (fn, id) ->
-  debounceQueue = id if debounceQueue == null
-  clearTimeout timer if id == debounceQueue
-  timer = setTimeout ->
+A.debounceTimer = false
+A.debounceQueue = null
+A.debounce = (fn, id) ->
+  A.debounceQueue = id if A.debounceQueue == null
+  clearTimeout A.debounceTimer if id == A.debounceQueue
+  A.debounceTimer = setTimeout ->
     fn()
-    debounceQueue = null
+    A.debounceQueue = null
   , 1000
 
 # The queued dispatcher is a conveyor belt for functions to allow the possibility of undoing.
@@ -35,7 +31,7 @@ MODAL
 ###
 
 # Set event listener to deploy modal
-$.modal =
+modal =
   on: (el, event) ->
     oneEvent el, event, (e) ->
       $('.se-modal')[0].style.display = 'block'
@@ -45,11 +41,11 @@ $.modal =
     $('.se-modal')[0].style.display = 'none'
 
 # Close the single element modal if clicked outside.
-$('body').addEventListener 'click', ->
-  $('.se-modal[style="display: block;"]').style.display = 'none' if $$('.se-modal[style="display: block;"]').length
+$('body').click ->
+  $('.se-modal[style="display: block;"]').style.display = 'none' if $('.se-modal[style="display: block;"]').length
 
 # Don't close the modal when clicking on it.  
-oneEvent $('.se-modal'), 'click', (e) -> e.stopPropagation()
+$('.se-modal').click (e) -> e.stopPropagation()
 
 ###
 GROWLS
