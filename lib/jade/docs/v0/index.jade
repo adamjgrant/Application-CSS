@@ -65,6 +65,24 @@ block main
             background-color: red;
           }
 
+  section#css-sidebar
+    :markdown
+      ### Sidebar
+
+      #### Edit mode
+
+      Edit mode lets your users edit the titles of sidebar items by swapping out a block-level element for an input element.
+
+    .example-editable-sidebar
+      p As an example, click the button below. This will set all the links in this sidebar as editable for 5 seconds.
+      p
+        button#editSidebar Edit Sidebar
+    :markdown
+      You'll notice any edits you have made no longer appear. At least for now, we do not include any more weight on the code
+      to synchronize the inputs with the block-level elements. Their visibility is simply toggled inversely with each other.
+
+      If you do wish to keep them synchronized, this can be done with JavaScript or a UI-binding library.
+
   h2 Components
 
   h2 JavaScript API

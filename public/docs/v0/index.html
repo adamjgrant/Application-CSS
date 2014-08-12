@@ -10,7 +10,14 @@ can be done by simply changing the color of the <code>html</code> element.</p>
 <pre><code>html {
   background-color: red;
 }
-</code></pre></section><h2>Components</h2><h2>JavaScript API</h2><section id="api-dollar"><h3>$ Namespace</h3>
+</code></pre></section><section id="css-sidebar"><h3>Sidebar</h3>
+
+<h4>Edit mode</h4>
+
+<p>Edit mode lets your users edit the titles of sidebar items by swapping out a block-level element for an input element.</p><div class="example-editable-sidebar"><p>As an example, click the button below. This will set all the links in this sidebar as editable for 5 seconds.</p><p><button id="editSidebar">Edit Sidebar</button></p></div><p>You'll notice any edits you have made no longer appear. At least for now, we do not include any more weight on the code
+to synchronize the inputs with the block-level elements. Their visibility is simply toggled inversely with each other.</p>
+
+<p>If you do wish to keep them synchronized, this can be done with JavaScript or a UI-binding library.</p></section><h2>Components</h2><h2>JavaScript API</h2><section id="api-dollar"><h3>$ Namespace</h3>
 
 <p>In order to keep application.css dependency-free, jQuery is not included. For syntactical simplicity and familiarity, the $
 namespace is still used.</p></section><section id="api-dollar-double"><h4>$$</h4>
