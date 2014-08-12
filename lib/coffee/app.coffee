@@ -1,10 +1,4 @@
-###
-Utility functions
-###
-
-# A very rudimentary, lightweight alternative to jQuery
-$$ = (el) -> document.querySelectorAll el
-$ = (el) -> $$(el)[0]
+require('../../browserify.js')
 
 # The debouncer prevents a rapidly-called function from being called 
 # more than once per second.
