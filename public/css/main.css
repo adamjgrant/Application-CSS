@@ -8,7 +8,7 @@ html {
 
 html, body {
   height: 100%;
-  font-size: 16px; }
+  font-size: 13px; }
 
 .grid-row {
   display: -moz-box;
@@ -29,11 +29,10 @@ html, body {
 
 .acss-sidebar {
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
   width: 100%;
   display: block;
   margin-left: 0;
-  font-size: 0.85rem;
+  font-size: 1rem;
   z-index: 990; }
   @media screen and (min-width: 768px) {
     .acss-sidebar {
@@ -75,6 +74,8 @@ html, body {
     margin: 0; }
     .acss-sidebar ul li {
       position: relative; }
+      .acss-sidebar ul li:last-child {
+        margin-bottom: 25px; }
       .acss-sidebar ul li ul {
         margin-left: 15px; }
         .acss-sidebar ul li ul li a, .acss-sidebar ul li ul li input {
@@ -137,8 +138,7 @@ html, body {
   .acss-sidebar ul li:hover.edit .tools, .acss-sidebar h1:hover.edit .tools {
     display: none; }
   .acss-sidebar h1 {
-    font-size: 0.85rem;
-    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
     margin: 0;
     padding: 5px 15px; }
 
