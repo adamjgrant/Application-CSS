@@ -1,13 +1,27 @@
 /* normalize.css will be added here */
 
-$black: #222
+// 8 point Greyscale
+$white:          #fff     // 1
+$lightest-gray:  #eee     // 2
+$lighter-gray:   #d4d4d4  // 3
+$light-gray:     #bbb     // 4
+$gray:           #a1a1a1  // 5
+$dark-gray:      #7f7f7f  // 6
+$darker-gray:    #5d5d5d  // 7
+$darkest-gray:   #333     // 8
+
+$black: $darkest-gray
+
+$darken: hsla(0, 0%, 0%, 0.45)
+$lighten: rgba(255, 255, 255, 0.45)
+
 $padding: 15px
 
 *
   box-sizing: border-box
 
 html
-  background: $black
+  background: hsl(206, 20%, 28%)
   color: white
 
 html, body
@@ -50,13 +64,17 @@ html, body
 @import _sidebar
 @import _mainpane
 @import _navbar
+@import _buttons
+@import _forms
 
 body
   +grid-row
 
-a, a[href]
+a
   text-decoration: none
-  color: white
+
+a:link
+  text-decoration: none
 
   &:hover
     text-decoration: underline

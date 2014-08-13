@@ -7,7 +7,7 @@ for li in $('.acss-sidebar li')
 
 $('.example-debouncer input')[0].addEventListener 'keyup', ->
   save = ->
-    $('.example-debouncer .alert')[0].innerHTML = "You saved! { name: '#{$('.example-debouncer input').value}' }"
+    $('.example-debouncer .alert')[0].innerHTML = "You saved! { name: '#{$('.example-debouncer input')[0].value}' }"
     setTimeout ->
       $('.alert')[0].innerHTML = ''
     , 1000
@@ -17,7 +17,9 @@ $('.example-debouncer input')[0].addEventListener 'keyup', ->
 $('#editSidebar').click ->
   for li in $('.acss-sidebar li')
     li.className = 'edit'
+  $('.example-editable-sidebar #text')[0].innerHTML = 'Click on sidebar items to edit them.'
   setTimeout ->
     for li in $('.acss-sidebar li')
       li.className = ''
+    $('.example-editable-sidebar #text')[0].innerHTML = ''
   , 5000

@@ -1,7 +1,6 @@
 extends ../../layout
 
 block head
-  style html { background-color: hsl(197, 46%, 38%); }
   script(src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css")
 
 block sidebar
@@ -21,17 +20,12 @@ block sidebar
   h1 Components
   ul
     li
-      a(href="#css-smart-table") Smart Table
+      a(href="#components-buttons") Buttons
 
   h1 JavaScript API
   ul
     li
       a(href="#api-dollar") $ Namespace
-      ul
-        li
-          a(href="#api-dollar-double") $$
-        li
-          a(href="#api-dollar-single") $
     li
       a(href="#api-debouncer") Debouncer
     li
@@ -76,7 +70,9 @@ block main
     .example-editable-sidebar
       p As an example, click the button below. This will set all the links in this sidebar as editable for 5 seconds.
       p
-        button#editSidebar Edit Sidebar
+        button.acss-btn#editSidebar Edit Sidebar
+        br
+        small#text
     :markdown
       You'll notice any edits you have made no longer appear. At least for now, we do not include any more weight on the code
       to synchronize the inputs with the block-level elements. Their visibility is simply toggled inversely with each other.
@@ -85,6 +81,29 @@ block main
 
   h2 Components
 
+  section#components-buttons
+    :markdown
+      ### Buttons
+
+      Buttons are small by default, to acommodate a busy backend interface.
+
+          <button class="acss-btn">Button</button>
+          <input class="acss-btn" type="submit" value="Button" />
+          <a class="acss-btn">Button</a>
+
+    .example-buttons
+      button.acss-btn 
+        | Button
+
+      input.acss-btn(type="submit" value="Button")
+
+      //- This is to trigger line-breaking in the output html.
+      span
+        | 
+
+      a.acss-btn
+        | Button 
+
   h2 JavaScript API
 
   section#api-dollar
@@ -92,35 +111,16 @@ block main
       ### $ Namespace
 
       In order to keep application.css dependency-free, jQuery is not included. For syntactical simplicity and familiarity, the $
-      namespace is still used.
+      namespace is still used. 
+      
+      In only about 350 characters of JavaScript, this provides returning of element arrays
 
-  section#api-dollar-double
-    :markdown
-      #### $$
+          $('p')
+          // [<p>, <p>, etc]
+      
+      and a `click()` handler
 
-      The double dollar returns the full array of a selector, as you would expect with jQuery's `$`
-
-          <a href="#">One</a>
-          <a href="#">Two</a>
-          <a href="#">Three</a>
-
-          ...
-          console.log($$('a').length)
-          // = 3
-
-  section#api-dollar-single
-    :markdown
-      #### $
-
-      The single dollar returns just the first from the array of $$.
-
-          <a href="#">One</a>
-          <a href="#">Two</a>
-          <a href="#">Three</a>
-
-          ...
-          console.log($('a').innerHTML);
-          // = 'One'
+          $('p').click(function() { ... });
 
   section#api-debouncer
     :markdown
@@ -131,7 +131,7 @@ block main
 
           var save = function() { ... }
 
-          $('input').addEventListener('keyup', function() {
+          $('input')[0].addEventListener('keyup', function() {
             debounce(save, 'save');
           });
 

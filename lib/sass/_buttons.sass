@@ -1,0 +1,25 @@
+=acss-btn($color: rgba(0, 0, 0, 0.3))
+  padding: 4px 10px
+  background-color: $color
+  color: white
+  text-decoration: none
+  border: 0px
+  outline: none
+  cursor: pointer
+  display: inline-block
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  margin-bottom: 15px
+  font-size: 0.75rem
+
+  &:hover
+    text-decoration: none
+    box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.05)
+
+  &:active
+    text-decoration: none
+    box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.1)
+
+.acss-btn
+  +acss-btn

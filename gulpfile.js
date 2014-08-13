@@ -114,7 +114,8 @@ gulp.task('compile:coffee', function() {
 gulp.task('compile:jade', function() {
     gulp.src(['./lib/jade/**/*.jade'])
       .pipe(jade({
-        locals: options
+        locals: options,
+        pretty: true
       }))
       .pipe(gulp.dest('./public/'));
 });

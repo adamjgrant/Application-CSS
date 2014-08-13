@@ -21,7 +21,7 @@ for (_i = 0, _len = _ref.length; _i < _len; _i++) {
 $('.example-debouncer input')[0].addEventListener('keyup', function() {
   var save;
   save = function() {
-    $('.example-debouncer .alert')[0].innerHTML = "You saved! { name: '" + ($('.example-debouncer input').value) + "' }";
+    $('.example-debouncer .alert')[0].innerHTML = "You saved! { name: '" + ($('.example-debouncer input')[0].value) + "' }";
     return setTimeout(function() {
       return $('.alert')[0].innerHTML = '';
     }, 1000);
@@ -36,15 +36,15 @@ $('#editSidebar').click(function() {
     li = _ref1[_j];
     li.className = 'edit';
   }
+  $('.example-editable-sidebar #text')[0].innerHTML = 'Click on sidebar items to edit them.';
   return setTimeout(function() {
-    var _k, _len2, _ref2, _results;
+    var _k, _len2, _ref2;
     _ref2 = $('.acss-sidebar li');
-    _results = [];
     for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
       li = _ref2[_k];
-      _results.push(li.className = '');
+      li.className = '';
     }
-    return _results;
+    return $('.example-editable-sidebar #text')[0].innerHTML = '';
   }, 5000);
 });
 
