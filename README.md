@@ -9,7 +9,8 @@
 -1. `gulp`
 0. `cp public/css/app.css appcss/app/assets/stylesheets/appcss/`
 1. `cd` to `appcss/`
-2. `rvm gemset use appcss`
-3. Change version in lib/appcss/version.rb
-4. `gem build appcss.gemspec`
-5. `gem push appcss-x.x.x.gem` (Replace the "x"s)
+2. `rvm use 2.1.2`
+3. `rvm gemset use appcss`
+4. Change version in lib/appcss/version.rb
+5. `gem build appcss.gemspec`
+6. `gem push appcss-x.x.x.gem` (Replace the "x"s)
