@@ -524,43 +524,43 @@ html, body {
           background: white;
           color: #333333;
           outline: 0px; }
-      .acss-sidebar ul li .tools {
-        display: none;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        padding: 5px 15px; }
-        .acss-sidebar ul li .tools span {
-          cursor: pointer;
-          display: inline-block;
-          text-align: center;
-          width: 15px;
-          border-radius: 50%;
-          position: relative; }
-          .acss-sidebar ul li .tools span .tooltip {
-            display: none;
-            position: absolute;
-            top: 30px;
-            right: 0px;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 5px;
-            color: #333333;
-            text-shadow: none;
-            border-radius: 3px;
-            z-index: 999; }
-          .acss-sidebar ul li .tools span:hover {
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3); }
-            .acss-sidebar ul li .tools span:hover .tooltip {
-              display: block; }
       .acss-sidebar ul li.edit a, .acss-sidebar ul li.edit .tools {
         display: none; }
       .acss-sidebar ul li.edit a + input {
         display: block; }
-      .acss-sidebar ul li:hover .tools {
-        display: block; }
-      .acss-sidebar ul li:hover.edit .tools {
-        display: none; }
+  .acss-sidebar .tools {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px 15px; }
+    .acss-sidebar .tools span {
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      width: 15px;
+      border-radius: 50%;
+      position: relative; }
+      .acss-sidebar .tools span .tooltip {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 0px;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 5px;
+        color: #333333;
+        text-shadow: none;
+        border-radius: 3px;
+        z-index: 999; }
+      .acss-sidebar .tools span:hover {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3); }
+        .acss-sidebar .tools span:hover .tooltip {
+          display: block; }
+  .acss-sidebar ul li:hover .tools, .acss-sidebar h1:hover .tools {
+    display: block; }
+  .acss-sidebar ul li:hover.edit .tools, .acss-sidebar h1:hover.edit .tools {
+    display: none; }
   .acss-sidebar h1 {
     font-size: 0.85rem;
     background-color: rgba(0, 0, 0, 0.2);

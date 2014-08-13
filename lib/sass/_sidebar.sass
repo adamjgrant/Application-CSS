@@ -67,40 +67,6 @@
           color: #333
           outline: 0px
 
-      .tools
-        display: none
-        position: absolute
-        top: 0
-        right: 0
-        bottom: 0
-        padding: 5px 15px
-
-        span
-          cursor: pointer
-          display: inline-block
-          text-align: center
-          width: 15px
-          border-radius: 50%
-          position: relative
-
-          .tooltip
-            display: none
-            position: absolute
-            top: 30px
-            right: 0px
-            background: rgba(255, 255, 255, 0.7)
-            padding: 5px
-            color: $black
-            text-shadow: none
-            border-radius: 3px
-            z-index: 999
-
-          &:hover
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3)
-
-            .tooltip
-              display: block
-
       &.edit
         a, .tools
           display: none
@@ -108,13 +74,47 @@
         a + input
           display: block
 
-      &:hover
-        .tools
-          display: block
+  .tools
+    display: none
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    padding: 5px 15px
 
-        &.edit
-          .tools
-            display: none
+    span
+      cursor: pointer
+      display: inline-block
+      text-align: center
+      width: 15px
+      border-radius: 50%
+      position: relative
+
+      .tooltip
+        display: none
+        position: absolute
+        top: 30px
+        right: 0px
+        background: rgba(255, 255, 255, 0.7)
+        padding: 5px
+        color: $black
+        text-shadow: none
+        border-radius: 3px
+        z-index: 999
+
+      &:hover
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3)
+
+        .tooltip
+          display: block
+          
+  ul li:hover, h1:hover
+    .tools
+      display: block
+
+    &.edit
+      .tools
+        display: none
 
   h1
     font-size: 0.85rem
