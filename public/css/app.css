@@ -488,7 +488,8 @@ html, body {
     font-weight: normal;
     margin: 0;
       margin-bottom: 7px;
-    padding: 5px 15px; }
+    padding: 5px 15px;
+    position: relative; }
   .acss-sidebar a {
     color: white; }
   @media screen and (min-width: 960px) {
@@ -559,7 +560,9 @@ html, body {
         color: #333333;
         text-shadow: none;
         border-radius: 3px;
-        z-index: 999; }
+        z-index: 999;
+        font-size: 0.75rem;
+        font-weight: bold; }
       .acss-sidebar .tools span:hover {
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3); }
         .acss-sidebar .tools span:hover .tooltip {
