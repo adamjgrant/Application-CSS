@@ -17,6 +17,7 @@
 
 ## Possibly quicker version
 
+0. `cd appcss`
 1. `rvm use 2.1.2`
 2. `rvm gemset use appcss`
 3. `make` (Edit version)
