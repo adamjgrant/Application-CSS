@@ -660,6 +660,8 @@ html, body {
     .acss-navbar ul li {
       list-style: none;
       margin: 0px 5px; }
+    .acss-navbar ul:first-child li:first-child a {
+      font-size: 1.25rem; }
 
 .acss-btn {
   padding: 4px 10px;
