@@ -8,7 +8,7 @@ html {
 
 html, body {
   height: 100%;
-  font-size: 13px; }
+  font-size: 16px; }
 
 .grid-row {
   display: -moz-box;
@@ -32,7 +32,7 @@ html, body {
   width: 100%;
   display: block;
   margin-left: 0;
-  font-size: 1rem;
+  font-size: 0.75rem;
   z-index: 990; }
   @media screen and (min-width: 768px) {
     .acss-sidebar {
@@ -58,6 +58,12 @@ html, body {
       width: calc(33.33333% - 15px);
       clear: none; } }
 
+  .acss-sidebar h1 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0;
+      margin-bottom: 7px;
+    padding: 5px 15px; }
   .acss-sidebar a {
     color: white; }
   @media screen and (min-width: 960px) {
@@ -137,10 +143,6 @@ html, body {
     display: block; }
   .acss-sidebar ul li:hover.edit .tools, .acss-sidebar h1:hover.edit .tools {
     display: none; }
-  .acss-sidebar h1 {
-    font-size: 1rem;
-    margin: 0;
-    padding: 5px 15px; }
 
 .acss-mainpane {
   width: 100%;
