@@ -435,6 +435,9 @@ html, body {
   height: 100%;
   font-size: 16px; }
 
+.acss-readable-container {
+  max-width: 768px; }
+
 .grid-row {
   display: -moz-box;
   display: -webkit-box;
