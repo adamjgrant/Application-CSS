@@ -518,12 +518,12 @@ html, body {
           padding-left: 30px; }
         .acss-sidebar ul li ul li:last-child {
           margin-bottom: 0; }
-      .acss-sidebar ul li a {
+      .acss-sidebar ul li > a, .acss-sidebar ul li > em, .acss-sidebar ul li > strong {
         padding: 5px 15px;
         display: block; }
-        .acss-sidebar ul li a + input {
+        .acss-sidebar ul li > a + input, .acss-sidebar ul li > em + input, .acss-sidebar ul li > strong + input {
           display: none; }
-        .acss-sidebar ul li a:hover {
+        .acss-sidebar ul li > a:hover, .acss-sidebar ul li > em:hover, .acss-sidebar ul li > strong:hover {
           background-color: rgba(255, 255, 255, 0.2);
           text-decoration: none; }
       .acss-sidebar ul li input[type="text"] {
@@ -549,14 +549,14 @@ html, body {
     right: 0;
     bottom: 0;
     padding: 5px 15px; }
-    .acss-sidebar .tools span {
+    .acss-sidebar .tools span, .acss-sidebar .tools a {
       cursor: pointer;
       display: inline-block;
       text-align: center;
       width: 15px;
       border-radius: 50%;
       position: relative; }
-      .acss-sidebar .tools span .tooltip {
+      .acss-sidebar .tools span .tooltip, .acss-sidebar .tools a .tooltip {
         display: none;
         position: absolute;
         top: 30px;
@@ -569,9 +569,9 @@ html, body {
         z-index: 999;
         font-size: 0.75rem;
         font-weight: bold; }
-      .acss-sidebar .tools span:hover {
+      .acss-sidebar .tools span:hover, .acss-sidebar .tools a:hover {
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), -1px 1px 1px rgba(0, 0, 0, 0.3), 1px -1px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.3); }
-        .acss-sidebar .tools span:hover .tooltip {
+        .acss-sidebar .tools span:hover .tooltip, .acss-sidebar .tools a:hover .tooltip {
           display: block; }
   .acss-sidebar ul li:hover .tools, .acss-sidebar h1:hover .tools {
     display: block; }
