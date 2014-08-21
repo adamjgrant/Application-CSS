@@ -463,7 +463,9 @@ html, body {
   font-size: 0.8rem;
   z-index: 990;
   background: rgba(245, 253, 255, 0.95);
-  color: #333333; }
+  color: #333333;
+  border-right: 1px solid #bbbbbb;
+  padding-top: 15px; }
   @media screen and (min-width: 768px) {
     .acss-sidebar {
       width: calc(100% - 15px);
