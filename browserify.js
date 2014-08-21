@@ -1,2 +1,0 @@
-var clickQuery = require('clickQuery');
-

@@ -1,4 +1,3 @@
-require('../../browserify.js')
 for li in $('.acss-sidebar li')
   input = document.createElement 'input'
   input.type = 'text'

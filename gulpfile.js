@@ -12,7 +12,6 @@ var gulp = require('gulp'),
   jade = require('gulp-jade'),
   insert = require('gulp-insert'),
   fileInsert = require('gulp-file-insert'),
-  browserify = require('gulp-browserify'),
   sourcemaps = require('gulp-sourcemaps');
 
 // Main entry point
@@ -91,7 +90,6 @@ gulp.task('compile:coffee', function() {
       .pipe(coffee({
         bare: true
       }))
-      .pipe(browserify())
       .pipe(gulp.dest('./public/js'));
 
     // Special case for the node index.js file

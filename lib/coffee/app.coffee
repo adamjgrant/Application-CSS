@@ -1,5 +1,3 @@
-require('../../browserify.js')
-
 window.A = new Object()
 
 # The debouncer prevents a rapidly-called function from being called 
