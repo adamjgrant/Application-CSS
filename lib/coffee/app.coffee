@@ -1,6 +1,6 @@
 window.A = new Object()
 
-# The debouncer prevents a rapidly-called function from being called 
+# The debouncer prevents a rapidly-called function from being called
 # more than once per second.
 A.debounceTimer = false
 A.debounceQueue = null
@@ -14,7 +14,7 @@ A.debounce = (fn, id) ->
 
 # The queued dispatcher is a conveyor belt for functions to allow the possibility of undoing.
 # Functions move down the belt via a timer and are bumped ahead by other queued functions.
-# Within the time on the belt, the user can choose to remove (undo) a queued function.  
+# Within the time on the belt, the user can choose to remove (undo) a queued function.
 # TODO
 
 # Make sure only one event listener exists.
@@ -42,10 +42,25 @@ modal =
 $('body').click ->
   $('.se-modal[style="display: block;"]').style.display = 'none' if $('.se-modal[style="display: block;"]').length
 
-# Don't close the modal when clicking on it.  
+# Don't close the modal when clicking on it.
 $('.se-modal').click (e) -> e.stopPropagation()
 
 ###
-GROWLS
+STATUSES
 ###
-# TODO
+
+A.status = (status) ->
+  # Create a unique id
+  id = Math.round(Math.random() * 9999999)
+
+  # Set the status container
+  $statusContainer = if $('.acss-status').length then $('.acss-status') else $(status.selector)
+
+  # Clear out and create a unique status inside the container
+  $($statusContainer).html("<div id='status-#{id}' class='status'>#{status.title}</div>")
+
+  # Hide after timeout.
+  delay = status.delay || 2000
+  setTimeout ->
+    $("#status-#{id}").fadeOut('fast')
+  , delay

@@ -105,7 +105,7 @@ html, body {
         border: 0px;
         background: transparent;
         padding: 5px 15px;
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         width: 100%; }
         .acss-sidebar ul li input[type="text"]:hover {
           background: rgba(255, 255, 255, 0.1); }
@@ -291,6 +291,9 @@ progress {
     -moz-appearance: none; }
   progress::-webkit-progress-value {
     display: block; }
+
+.acss-status {
+  background: yellow; }
 
 body {
   display: -moz-box;

@@ -59,5 +59,16 @@ $('.se-modal').click(function(e) {
 
 
 /*
-GROWLS
+STATUSES
  */
+
+A.status = function(status) {
+  var $statusContainer, delay, id;
+  id = Math.round(Math.random() * 9999999);
+  $statusContainer = $('.acss-status').length ? $('.acss-status') : $(status.selector);
+  $($statusContainer).html("<div id='status-" + id + "' class='status'>" + status.title + "</div>");
+  delay = status.delay || 2000;
+  return setTimeout(function() {
+    return $("#status-" + id).fadeOut('fast');
+  }, delay);
+};
