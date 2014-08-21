@@ -11,8 +11,10 @@
 =acss-sidebar
   height: 100%
   +grid-column('third')
-  font-size: 0.75rem
+  font-size: 0.8rem
   z-index: 990
+  background: hsla(194, 100%, 98%, 0.95)
+  color: $black
 
   h1
     font-size: 1rem
@@ -23,7 +25,7 @@
     position: relative
 
   a
-    color: white
+    color: $black
 
   @media screen and (min-width: $tablet-landscape)
     width: 200px
@@ -58,12 +60,13 @@
       > a, > em, > strong
         padding: 5px $padding
         display: block
+        cursor: pointer
 
         + input
           display: none
 
         &:hover
-          background-color: rgba(255, 255, 255, 0.2)
+          background-color: rgba(0, 0, 0, 0.1)
           text-decoration: none
 
       input[type="text"]
@@ -109,13 +112,13 @@
         position: absolute
         top: 30px
         right: 0px
-        background: rgba(255, 255, 255, 0.7)
+        background: rgba(0, 0, 0, 0.7)
         padding: 5px
-        color: $black
+        color: white
         text-shadow: none
         border-radius: 3px
         z-index: 999
-        font-size: 0.75rem
+        font-size: 0.8rem
         font-weight: bold
 
       &:hover
