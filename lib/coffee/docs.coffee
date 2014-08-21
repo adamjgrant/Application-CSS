@@ -22,3 +22,11 @@ $('#editSidebar').click ->
       li.className = ''
     $('.example-editable-sidebar #text')[0].innerHTML = ''
   , 5000
+
+$('#launchStatusOne').click ->
+  A.status
+    title: 'Saved'
+
+$('#launchStatusTwo').click ->
+  A.status
+    title: 'Deleted'

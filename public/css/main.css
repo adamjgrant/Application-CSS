@@ -293,7 +293,18 @@ progress {
     display: block; }
 
 .acss-status {
-  background: yellow; }
+  position: fixed;
+  top: 15px;
+  width: 300px;
+  margin-left: -150px;
+  left: 50%; }
+  .acss-status .status {
+    background: yellow;
+    color: #333333;
+    padding: 5px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 0.75rem; }
 
 body {
   display: -moz-box;

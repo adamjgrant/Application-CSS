@@ -45,7 +45,7 @@ block main
   section#css-sass
     :markdown
       ### SASS
-
+      
       All `.acss-x` classes (e.g. `.acss-sidebar`) are also available as Sass mixins under the same name. (e.g. `acss-sidebar()`)
 
       These are exposed to allow more personalized, semantic usage of styles.
@@ -66,7 +66,7 @@ block main
       ### Sidebar
 
       #### Edit mode
-      
+
       Edit mode lets your users edit the titles of sidebar items by swapping out a block-level element for an input element.
 
     .example-editable-sidebar
@@ -75,7 +75,6 @@ block main
         button.acss-btn#editSidebar Edit Sidebar
         br
         small#text
-
     :markdown
       You'll notice any edits you have made no longer appear. At least for now, we do not include any more weight on the code
       to synchronize the inputs with the block-level elements. Their visibility is simply toggled inversely with each other.
@@ -95,17 +94,17 @@ block main
           <a class="acss-btn">Button</a>
 
     .example-buttons
-      button.acss-btn
+      button.acss-btn 
         | Button
 
       input.acss-btn(type="submit" value="Button")
 
       //- This is to trigger line-breaking in the output html.
       span
-        |
+        | 
 
       a.acss-btn
-        | Button
+        | Button 
 
   section#components-progress
     :markdown
@@ -120,13 +119,13 @@ block main
       ### $ Namespace
 
       In order to keep application.css dependency-free, jQuery is not included. For syntactical simplicity and familiarity, the $
-      namespace is still used.
-
+      namespace is still used. 
+      
       In only about 350 characters of JavaScript, this provides returning of element arrays
 
           $('p')
           // [<p>, <p>, etc]
-
+      
       and a `click()` handler
 
           $('p').click(function() { ... });
@@ -150,7 +149,7 @@ block main
     .example-debouncer
       h4 Example
       p Type in the text box below
-      p
+      p 
         input(type="text" placeholder="Name your project")
       p
         code.alert
@@ -161,9 +160,9 @@ block main
 
       The queued dispatcher is a conveyor belt for functions to allow the possibility of undoing.
       Functions move down the belt via a timer and are bumped ahead by other queued functions.
-      Within the time on the belt, the user can choose to remove (undo) a queued function.
+      Within the time on the belt, the user can choose to remove (undo) a queued function.  
 
-    .example-dispatch-queue
+    .example-dispatch-queue 
       :markdown
         Say you're writing an email function, but you want to give users 30 seconds to undo sending just in case.
 
@@ -179,7 +178,7 @@ block main
               });
             }
 
-        We've told the dispatchQueue to add the `sendEmail()` function to the dispatchQueue. It will get its own default ID
+        We've told the dispatchQueue to add the `sendEmail()` function to the dispatchQueue. It will get its own default ID 
         and the queue will revolve every 30 seconds by default.
 
             sendEmail = function() { ... }
@@ -187,19 +186,19 @@ block main
             $sendEmail.addEventListener 'click', function() {
               dispatchQueue.add({
                 queue: sendEmail,
-                A.status({
+                growl: {
                   title: 'Your email has been sent',
                   text: 'Thank you.',
                   undoText: 'Undo'
-                })
+                }
               });
             }
 
-        We also need to give users a way to undo (take the function out of the queue), so we pass in a status. Notice the special parameter `undoText`
+        We also need to give users a way to undo (take the function out of the queue), so we pass in a growl. Notice the special parameter `undoText`
         has been made available here. Via `dispatchQueue()` this allows us to customize the text that is linked to the undo action. The function will take care of
         all the necessary binding.
 
-        But maybe we don't want to use status as our means of undoing. `dispatchQueue()` allows for customization.
+        But maybe we don't want to use growls as our means of undoing. `dispatchQueue()` allows for customization.
 
             sendEmail = function() { ... }
 
@@ -241,16 +240,22 @@ block main
     :markdown
       ### Statuses
 
-      Statuses are simple messages that are displayed in a temporary colored container at the top of the window. These are meant to be
-      fleeting. In other words, only one displays at a time. Each new status created deletes the previous one.
+      Statuses are meant to be quick, fleeting messages with passive importance (e.g. "Saved successfuly")
+      Once a status is created, if a previous status is showing, it is replaced by the new one. Only one status appears at a time.
 
-      To create a status, simply call `A.status()` and pass any of the params in an object as detailed below:
+      To create a status, simply pass in an object with the following properties
 
           A.status({
-            title: 'Saved successfully', // Only required field
-            delay: 2000, // Delay before hiding. Not required. 2000ms is default
-            selector: '.sidebar' // If not using .acss-status as your status class.
+            title: 'Saved successfully', // This is the only required field.
+            delay: 2000, // Default ms the status shows before disappearing.
+            selector: '.acss-status' // Where should the statuses show.
+                                     // This is required if .acss-status does not appear on the page.
           })
+
+      **Example**
+
+    button.acss-btn#launchStatusOne Save
+    button.acss-btn#launchStatusTwo Delete
 
   section#api-modal
     :markdown

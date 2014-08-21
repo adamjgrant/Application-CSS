@@ -40,3 +40,15 @@ $('#editSidebar').click(function() {
     return $('.example-editable-sidebar #text')[0].innerHTML = '';
   }, 5000);
 });
+
+$('#launchStatusOne').click(function() {
+  return A.status({
+    title: 'Saved'
+  });
+});
+
+$('#launchStatusTwo').click(function() {
+  return A.status({
+    title: 'Deleted'
+  });
+});

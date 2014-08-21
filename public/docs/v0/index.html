@@ -6,6 +6,7 @@
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css"></script>
   </head>
   <body>
+    <div class="acss-status"></div>
     <nav class="acss-navbar">
       <ul>
         <li><a href="/">Application CSS</a></li>
@@ -34,10 +35,9 @@
         <li><a href="#api-dollar">$ Namespace</a></li>
         <li><a href="#api-debouncer">Debouncer</a></li>
         <li><a href="#api-dispatch-queue">Dispatch Queue</a></li>
-        <li><a href="#api-growls">Growls</a></li>
+        <li><a href="#api-statuses">Statuses</a></li>
         <li><a href="#api-modal">Modal</a></li>
       </ul>
-      <footer class="acss-status"></footer>
     </aside>
     <main class="acss-mainpane">
       <h1>Documentation</h1>
@@ -214,6 +214,25 @@ $('#compose').click(function() {
 <p>Because we think it's okay to send the email if the user starts a new message, we've attached <code>dispatchQueue.dispatch()</code> to the compose button as well.
 <code>dispatch</code> will remove the function from the queue, but fires the function as well.</p>
         </div>
+      </section>
+      <section id="api-statuses"><h3>Statuses</h3>
+
+<p>Statuses are meant to be quick, fleeting messages with passive importance (e.g. "Saved successfuly")
+Once a status is created, if a previous status is showing, it is replaced by the new one. Only one status appears at a time.</p>
+
+<p>To create a status, simply pass in an object with the following properties</p>
+
+<pre><code>A.status({
+  title: 'Saved successfully', // This is the only required field.
+  delay: 2000, // Default ms the status shows before disappearing.
+  selector: '.acss-status' // Where should the statuses show.
+                           // This is required if .acss-status does not appear on the page.
+})
+</code></pre>
+
+<p><strong>Example</strong></p>
+        <button id="launchStatusOne" class="acss-btn">Save</button>
+        <button id="launchStatusTwo" class="acss-btn">Delete</button>
       </section>
       <section id="api-modal"><h3>Modal</h3>
 
