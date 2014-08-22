@@ -24,6 +24,7 @@ $darken: hsla(0, 0%, 0%, 0.45)
 $lighten: rgba(255, 255, 255, 0.45)
 
 $padding: 15px
+$navbarHeight: 40px
 
 // Sizes
 $tablet: 768px
@@ -34,7 +35,6 @@ $tablet: 768px
 html
   background: $dark-blue
   color: white
-  line-height: 1.5rem
 
 html, body
   height: 100%
@@ -43,6 +43,9 @@ html, body
 a
   color: $blue
   text-decoration: none
+
+p, label, table, em, strong, span
+  line-height: 1.5rem
 
 =acss-readable-container
   max-width: $tablet

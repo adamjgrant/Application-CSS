@@ -4,8 +4,7 @@
 
 html {
   background: #4199cc;
-  color: white;
-  line-height: 1.5rem; }
+  color: white; }
 
 html, body {
   height: 100%;
@@ -14,6 +13,9 @@ html, body {
 a {
   color: #40a9e6;
   text-decoration: none; }
+
+p, label, table, em, strong, span {
+  line-height: 1.5rem; }
 
 .acss-readable-container {
   max-width: 768px; }
@@ -45,7 +47,8 @@ a {
   background: whitesmoke;
   color: #627d8c;
   box-shadow: inset 0px 3px 5px #bbbbbb;
-  padding-top: 15px; }
+  padding-top: 15px;
+  line-height: normal; }
   @media screen and (min-width: 768px) {
     .acss-sidebar {
       width: calc(100% - 15px);
@@ -83,9 +86,9 @@ a {
     .acss-sidebar {
       width: 200px;
       position: absolute;
-      top: 50px;
+      top: 40px;
       left: 0;
-      height: calc(100vh - 50px);
+      height: calc(100vh - 40px);
       overflow: auto; } }
   .acss-sidebar ul {
     list-style: none;
@@ -200,8 +203,8 @@ a {
       position: absolute;
       z-index: 980;
       left: 200px;
-      top: 50px;
-      height: calc(100vh - 50px);
+      top: 0;
+      height: 100vh;
       right: 0;
       overflow: auto; } }
   .acss-mainpane section:target {
@@ -226,13 +229,13 @@ a {
   -moz-align-content: space-between;
   align-content: space-between;
   width: 100%;
-  padding: 0 10px; }
+  padding: 0 3.5px; }
   .acss-navbar a {
     color: white; }
   .acss-navbar p {
     margin: 0; }
   .acss-navbar ul {
-    margin: 15px 0;
+    margin: 8.5px 0;
     padding: 0;
     display: -moz-box;
     display: -webkit-box;
