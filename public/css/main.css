@@ -3,12 +3,17 @@
   box-sizing: border-box; }
 
 html {
-  background: #394956;
-  color: white; }
+  background: #4199cc;
+  color: white;
+  line-height: 1.5rem; }
 
 html, body {
   height: 100%;
   font-size: 16px; }
+
+a {
+  color: #40a9e6;
+  text-decoration: none; }
 
 .acss-readable-container {
   max-width: 768px; }
@@ -37,9 +42,9 @@ html, body {
   margin-left: 0;
   font-size: 0.8rem;
   z-index: 990;
-  background: rgba(245, 253, 255, 0.95);
-  color: #333333;
-  border-right: 1px solid #bbbbbb;
+  background: whitesmoke;
+  color: #627d8c;
+  box-shadow: inset 0px 3px 5px #bbbbbb;
   padding-top: 15px; }
   @media screen and (min-width: 768px) {
     .acss-sidebar {
@@ -73,7 +78,7 @@ html, body {
     padding: 5px 15px;
     position: relative; }
   .acss-sidebar a {
-    color: #333333; }
+    color: #627d8c; }
   @media screen and (min-width: 960px) {
     .acss-sidebar {
       width: 200px;
@@ -164,7 +169,7 @@ html, body {
   margin-left: 0;
   padding: 15px;
   background: white;
-  color: #333333; }
+  color: #627d8c; }
   @media screen and (min-width: 768px) {
     .acss-mainpane {
       width: calc(100% - 15px);
@@ -254,8 +259,8 @@ html, body {
 
 .acss-btn {
   padding: 4px 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  background-color: whitesmoke;
+  color: #627d8c;
   text-decoration: none;
   border: 0px;
   outline: none;
@@ -272,6 +277,9 @@ html, body {
   .acss-btn:active {
     text-decoration: none;
     box-shadow: inset 0px 0px 0px 100px rgba(0, 0, 0, 0.1); }
+  .acss-btn.primary {
+    background: #40a9e6;
+    color: white; }
 
 input[type="text"], input[type="email"], input[type="search"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="number"], input[type="password"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"] {
   border: 1px solid #a1a1a1;
@@ -304,8 +312,8 @@ progress {
   margin-left: -150px;
   left: 50%; }
   .acss-status .status {
-    background: yellow;
-    color: #333333;
+    background: #ffee6e;
+    color: #627d8c;
     padding: 5px;
     border-radius: 3px;
     text-align: center;

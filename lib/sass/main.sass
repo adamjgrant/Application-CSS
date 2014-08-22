@@ -2,7 +2,7 @@
 
 // 8 point Greyscale
 $white:          #fff     // 1
-$lightest-gray:  #eee     // 2
+$lightest-gray:  #f5f5f5  // 2, default off white
 $lighter-gray:   #d4d4d4  // 3
 $light-gray:     #bbb     // 4
 $gray:           #a1a1a1  // 5
@@ -10,8 +10,15 @@ $dark-gray:      #7f7f7f  // 6
 $darker-gray:    #5d5d5d  // 7
 $darkest-gray:   #333     // 8
 
-$black: $darkest-gray
-$yellow: yellow
+$black:          #627D8C // Text colors
+
+// Colors
+$blue:           #40A9E6 // Buttons
+$dark-blue:      #4199CC // Lab95 heading 
+
+$yellow:         #FFEE6E // Notifications
+
+$green:          #57C864 // ?
 
 $darken: hsla(0, 0%, 0%, 0.45)
 $lighten: rgba(255, 255, 255, 0.45)
@@ -25,12 +32,17 @@ $tablet: 768px
   box-sizing: border-box
 
 html
-  background: hsl(206, 20%, 28%)
+  background: $dark-blue
   color: white
+  line-height: 1.5rem
 
 html, body
   height: 100%
   font-size: 16px
+
+a
+  color: $blue
+  text-decoration: none
 
 =acss-readable-container
   max-width: $tablet
