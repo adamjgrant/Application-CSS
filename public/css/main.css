@@ -46,7 +46,7 @@ p, label, table, em, strong, span {
   z-index: 990;
   background: whitesmoke;
   color: #627d8c;
-  box-shadow: inset 0px 3px 5px #bbbbbb;
+  box-shadow: inset -3px 0px 15px -3px #bbbbbb;
   padding-top: 15px;
   line-height: normal; }
   @media screen and (min-width: 768px) {
@@ -313,7 +313,8 @@ progress {
   top: 15px;
   width: 300px;
   margin-left: -150px;
-  left: 50%; }
+  left: 50%;
+  z-index: 999999; }
   .acss-status .status {
     background: #ffee6e;
     color: #627d8c;
